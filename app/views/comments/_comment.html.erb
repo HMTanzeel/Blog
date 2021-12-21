@@ -1,0 +1,22 @@
+
+<% unless comment.archived? %>
+  
+  <p>
+
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+
+  </p>
+
+  <p>
+
+    <strong>comment:</strong>
+    <%= comment.body %>
+
+  </p>
+
+  <%= button_to 'Delete Comment', [comment.article, comment],
+              data: { confirm: "Are you sure?" },
+              :method => :delete %>
+
+<% end %>
